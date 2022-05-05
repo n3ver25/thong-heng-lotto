@@ -6,7 +6,7 @@ import { MainContent } from '../components/MainContent'
 
 const Homepage = () => (
   <Layout isHomepage>
-    <Seo title="Home" />
+    <Seo title="ทองเฮงล๊อตโต้" />
     <HomepageBanner />
     <MainContent />
   </Layout>
