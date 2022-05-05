@@ -25,7 +25,7 @@ const OptimizeButton = styled.button`
   @media (max-width: 767px) {
     font-size: 12px;
     line-height: 15px;
-    height: 22px;
+    height: 45px;
   }
 `
 
@@ -50,7 +50,7 @@ const OptimizeButtonRegister = styled.button`
   @media (max-width: 767px) {
     font-size: 12px;
     line-height: 15px;
-    height: 22px;
+    height: 45px;
   }
 `
 
@@ -75,8 +75,12 @@ export const Header = ({ isHomepage }) => {
         </ul>
       </nav> */}
       <ResgisterButton>
-        <OptimizeButton> เข้าสู่ระบบ</OptimizeButton>
-        <OptimizeButtonRegister>สมัครสมาชิก</OptimizeButtonRegister>
+        <OptimizeButton>
+          <a href="http://www.Thonglotto.com">เข้าสู่ระบบ</a>{' '}
+        </OptimizeButton>
+        <OptimizeButtonRegister>
+          <a href="http://www.thonglotto.com/member/a15/">สมัครสมาชิก</a>
+        </OptimizeButtonRegister>
       </ResgisterButton>
     </header>
   )
