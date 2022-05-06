@@ -1,5 +1,5 @@
-import * as React from 'react'
-import { Helmet } from 'react-helmet'
+import * as React from "react";
+import { Helmet } from "react-helmet";
 import { useStaticQuery, graphql } from 'gatsby'
 
 export const Seo = ({ description, title }) => {
@@ -20,10 +20,11 @@ export const Seo = ({ description, title }) => {
   const metaDescription =
     description || queryData.site?.siteMetadata?.description
 
+
   return (
     <Helmet>
       <title>{metaTitle}</title>
       <meta name="description" content={metaDescription} />
     </Helmet>
-  )
-}
+  );
+};

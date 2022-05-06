@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
-    title: 'Gatsby + Prismic Tutorial',
-    description: 'Learn how to integrate Prismic into your Gatsby project.',
+    title: 'ทองเฮง เว็ปหวยออนไลน์ระดับประเทศ',
+    description: 'เฮง เฮง เฮง ไปกับ "ทองเฮง" เว็ปหวยออนไลน์ที่ดีที่สุด',
   },
   plugins: [
     'gatsby-plugin-image',
