@@ -1,6 +1,6 @@
 {
-  "name": "gatsby-getting-started-tutorial",
-  "description": "A simple tutorial to get started with Prismic & Gatsby.js",
+  "name": "ทองเฮง",
+  "description": "ทองเฮง บริการฝากถอน อัตโนมัติ สมัครง่าย มีโบนัสให้ตลอด แทงหวยออนไลน์ หวยรัฐ หวยไทยลอตโต้ หวยหุ้น หวยหุ้นต่างประเทศ หวนยี่กี(5นาที)มีมากกว่า200รอบต่อวัน แท่งสะสมรับเครดิตฟรี ยิ่งชวนเพื่อนมาเล่นเยอะยิ่งรับโบนัส8%ฟรีๆ",
   "dependencies": {
     "@prismicio/react": "^2.3.0",
     "gatsby": "^4.3.0",
@@ -13,7 +13,9 @@
     "prismic-reactjs": "^1.3.3",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
+    "react-ga": "^3.3.0",
     "react-helmet": "^6.1.0",
+    "stream": "^0.0.2",
     "styled-components": "^5.3.5"
   },
   "scripts": {
