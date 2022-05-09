@@ -8,6 +8,6 @@ const ImageStyled = styled.img`
 
 export const HomepageBanner = () => (
   <section className="homepage-banner">
-    <ImageStyled src={logo} style={{ width: '200px' }} alt="ทองเฮงล๊อตโต้" />
+    <ImageStyled src={logo} style={{ width: '200px' }} alt="ทองเฮงล๊อตโต้"/>
   </section>
 )
