@@ -24,7 +24,7 @@ export const Footer = () => (
     <a href="https://line.me/ti/p/CZriEsagI7">
       <LinePosition>
         <OptimizeIcon src={IconLine} />
-        LINE: @thongheng
+        LINE: @thongheng99
       </LinePosition>
     </a>
   </footer>
