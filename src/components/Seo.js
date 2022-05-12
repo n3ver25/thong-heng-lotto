@@ -32,15 +32,16 @@ export const Seo = ({ description, title }) => {
       {/* Global site tag (gtag.js) - Google Analytics  */}
       <script
         async
-        src={`https://www.googletagmanager.com/gtag/js?id=228261249`}
+        src="https://www.googletagmanager.com/gtag/js?id=G-SSMH38P1YE"
       ></script>
       <script>
         {`
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', 228261249);
-        `}
+   window.dataLayer = window.dataLayer || [];
+   function gtag(){dataLayer.push(arguments);}
+   gtag('js', new Date());
+ 
+   gtag('config', 'G-SSMH38P1YE');
+  `}
       </script>
       <script>
         {`(function (w, d, s, l, i) {
