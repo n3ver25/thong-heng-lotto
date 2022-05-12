@@ -21,10 +21,10 @@ const OptimizeIcon = styled.img`
 
 export const Footer = () => (
   <footer>
-    <a href="https://line.me/ti/p/CZriEsagI7">
+    <a href="https://line.me/ti/p/liBcliEwKW">
       <LinePosition>
         <OptimizeIcon src={IconLine} />
-        LINE: @thongheng
+        LINE: @thongheng99
       </LinePosition>
     </a>
   </footer>
