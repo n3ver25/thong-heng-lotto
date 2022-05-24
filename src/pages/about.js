@@ -1,98 +1,211 @@
 import * as React from 'react'
-import { Link } from 'gatsby'
 import { Layout } from '../components/Layout'
 import { Seo } from '../components/Seo'
+import { graphql } from 'gatsby'
+import { RichText } from 'prismic-reactjs'
+import styled from 'styled-components'
+import Img from 'gatsby-image/withIEPolyfill'
 
-import skiLiftChairs from '../images/ski-lift-chairs.jpeg'
-import mountainRange from '../images/mountain-range.jpeg'
-import forrestAerialShot from '../images/forrest-aerial-shot.jpeg'
+const ImageOptimize = styled(Img)`
+  width: 100%;
+  height: 100%;
+`
 
-const About = () => (
-  <Layout>
-    <Seo
-      title="About"
-      description="Learn more about us who we are and what we do."
-    />
+const IconPosition = styled.div`
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  @media (max-width: 767px) {
+    grid-template-columns: 1fr;
+  }
+`
+const CardIcon = styled.div`
+  width: 208px;
+  height: 208px;
+  margin: 20px auto;
+  @media (max-width: 1025px) {
+    width: 120px;
+    height: 120px;
+  }
+`
 
-    <main className="container">
-      <section className="full-width-image content-section">
-        <img src={skiLiftChairs} alt="Ski lift chairs" />
-      </section>
+const TitlePage = styled.div`
+  background: #b78711;
+  text-align: center;
+  padding: 53px;
+  @media (max-width: 1025px) {
+    padding: 15px;
+  }
+  h1 {
+    font-size: 36px;
+    line-height: 42px;
+    text-align: center;
+    letter-spacing: -0.015em;
 
-      <section className="content-section text-section-2col">
-        <h1>About Us</h1>
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Donec odio.
-          Quisque volutpat mattis eros. Nullam malesuada erat ut turpis.
-          Suspendisse urna nibh, viverra non, semper suscipit, posuere a, pede.
-        </p>
-      </section>
+    color: #ffffff;
+    @media (max-width: 1025px) {
+      font-size: 20px;
+    }
+  }
+  p {
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.015em;
 
-      <section className="content-section text-section-col-1">
-        <p>
-          Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Phasellus
-          hendrerit. Pellentesque aliquet nibh nec urna. In nisi neque, aliquet
-          vel, dapibus id, mattis vel, nisi. Sed pretium, ligula sollicitudin
-          laoreet viverra, tortor libero sodales leo, eget blandit nunc tortor
-          eu nibh. Nullam mollis. Ut justo. Suspendisse potenti. Ut scelerisque
-          hendrerit tellus. Integer sagittis. Vivamus a mauris eget arcu gravida
-          tristique. Nunc iaculis mi in ante. Vivamus imperdiet nibh feugiat
-          est. Ut scelerisque hendrerit tellus. Integer sagittis. Vivamus a
-          mauris eget arcu gravida tristique.
-        </p>
-      </section>
+    color: #ffffff;
+    margin-bottom: 0;
+    @media (max-width: 1025px) {
+      font-size: 14px;
+    }
+    @media (max-width: 767px) {
+      font-size: 10px;
+    }
+  }
+`
+const Service = styled.div`
+  background: #ffffff;
+  padding: 40px;
+`
 
-      <section className="content-section quote">
-        <blockquote>Lorem ipsum dolor site amet</blockquote>
-      </section>
+const ServiceFont = styled.div`
+  h1 {
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.015em;
 
-      <section className="content-section text-section-1col">
-        <p>
-          Sed egestas, ante et vulputate volutpat, eros pede semper est, vitae
-          luctus metus libero eu augue. Morbi purus libero, faucibus adipiscing,
-          commodo quis, gravida id, est. Sed lectus. Praesent elementum
-          hendrerit tortor. Sed semper lorem at felis. Vestibulum volutpat,
-          lacus a ultrices sagittis. Suspendisse mauris. Fusce accumsan mollis
-          eros. Pellentesque a diam sit amet mi ullamcorper vehicula. Integer
-          adipiscing risus a sem. Nullam quis massa sit amet nibh viverra
-          malesuada. Nunc sem lacus, accumsan quis, faucibus non, congue vel,
-          arcu. Ut scelerisque hendrerit tellus. Integer sagittis. Vivamus a
-          mauris eget arcu gravida tristique. Nunc iaculis mi in ante. Vivamus
-          imperdiet nibh feugiat est. Sed lectus. Praesent elementum hendrerit
-          tortor. Sed semper lorem at felis. Vestibulum volutpat, lacus a
-          ultrices sagittis. Suspendisse mauris. Fusce accumsan mollis eros.
-          Pellentesque a diam sit amet mi ullamcorper vehicula. Integer
-          adipiscing risus a sem.
-        </p>
-      </section>
+    color: #000000;
+    @media (max-width: 1025px) {
+      font-size: 18px;
+    }
+  }
+  p {
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.015em;
 
-      <section className="image-gallery content-section">
-        <h2>Lorem ipsum dolor sit amet</h2>
-        <div className="gallery">
-          <div className="gallery-item">
-            <img src={forrestAerialShot} alt="Forrest aerial shot" />
-            <p>
-              Lorem ipsum dolor sit amet, consectetuer adipiscing elit.
-              Phasellus hendrerit. Pellentesque aliquet nibh nec urna. In nisi
-              neque, <em>aliquet vel</em>, dapibus id, mattis vel, nisi.
-            </p>
-            <p className="gallery-link">
-              <Link to="/more-info">Learn More</Link>
-            </p>
-          </div>
-          <div className="gallery-item">
-            <img src={mountainRange} alt="Mountain range" />
-            <p>
-              Sed egestas, ante et vulputate volutpat, eros pede semper est,
-              vitae luctus metus libero eu augue. Morbi purus libero, faucibus
-              adipiscing, commodo quis, gravida id, est.
-            </p>
-          </div>
-        </div>
-      </section>
-    </main>
-  </Layout>
-)
+    color: #000000;
+    @media (max-width: 1025px) {
+      font-size: 18px;
+    }
+  }
+`
 
+const IconTask = styled.div`
+  h1 {
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    @media (max-width: 1025px) {
+      font-size: 14px;
+    }
+  }
+  p {
+    font-size: 24px;
+    line-height: 28px;
+    text-align: center;
+    letter-spacing: -0.015em;
+    margin-bottom: 0;
+
+    @media (max-width: 1025px) {
+      font-size: 14px;
+    }
+  }
+`
+
+const About = ({ data }) => {
+  const doc = data.prismicAbout.data
+  const icon = doc?.body[0].items
+  return (
+    <Layout>
+      <Seo
+        title="ทองเฮงล๊อตโต้"
+        description="มองหาที่ซื้อ หวยออนไลน์ ต้อง THONGHENG เว็บซื้อหวยที่ดีที่สุด ณ เวลานี้ เจ้าใหญ่ จ่ายจริง อัตราจ่ายสูง รับทุกเลข ไม่ปิด ไม่อั้น เปิดให้ แทงหวย 24 ***โมง"
+      />
+
+      <main className="container">
+        <TitlePage>
+          <div>{RichText.render(doc.about_title.raw)}</div>
+          <div>{RichText.render(doc.about_detail.raw)}</div>
+        </TitlePage>
+
+        <Service>
+          <ServiceFont>
+            <div> {RichText.render(doc.service_title.raw)} </div>
+            <div> {RichText.render(doc.service_detail.raw)}</div>
+          </ServiceFont>
+          <IconPosition>
+            {icon.map((data) => (
+              <>
+                <IconTask>
+                  <CardIcon>
+                    <ImageOptimize fluid={data?.service_image?.fluid} />
+                  </CardIcon>
+                  {RichText.render(data.service_title1.raw)}
+                  {RichText.render(data.service_detail1.raw)}
+                </IconTask>
+              </>
+            ))}
+          </IconPosition>
+        </Service>
+      </main>
+    </Layout>
+  )
+}
 
 export default About
+
+export const query = graphql`
+  query MyQuery {
+    prismicAbout {
+      data {
+        about_detail {
+          raw
+        }
+        about_footer {
+          raw
+        }
+        about_image {
+          fluid(maxWidth: 1200) {
+            src
+          }
+        }
+        about_title {
+          raw
+        }
+        service_detail {
+          raw
+        }
+        service_title {
+          raw
+        }
+        body {
+          ... on PrismicAboutDataBodyService {
+            id
+            items {
+              service_detail1 {
+                raw
+              }
+              service_image {
+                fluid(maxWidth: 208) {
+                  src
+                }
+              }
+              service_title1 {
+                raw
+              }
+            }
+          }
+        }
+      }
+      type
+      id
+    }
+  }
+`
