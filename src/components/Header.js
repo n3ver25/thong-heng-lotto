@@ -1,7 +1,7 @@
 import * as React from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
-import logo from "../images/favicon.png";
+import logo from "../images/thonghenglogoResize.png";
 
 const ResgisterButton = styled.div`
   display: flex;
@@ -151,7 +151,7 @@ export const Header = ({ isHomepage, setNavBar }) => {
       <Page>
         <Link to="/">
           <div className="logo">
-            <TestStyled src={logo} alt="thonglotto-logo" />
+            <TestStyled src={logo} alt="ทองเฮง หาซื้อหวยออนไลน์" />
           </div>
         </Link>
         <nav>
