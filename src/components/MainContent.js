@@ -49,8 +49,8 @@ const DetailText = styled.div`
     @media (max-width: 767px) {
       font-style: normal;
       font-weight: normal;
-      font-size: 8px;
-      line-height: 12px;
+      font-size: 12px;
+      line-height: 15px;
       text-align: center;
       letter-spacing: -0.015em;
     }
@@ -73,8 +73,8 @@ const SupTitle = styled.div`
   color: #ffffff;
 
   @media (max-width: 767px) {
-    font-size: 8px;
-    line-height: 9px;
+    font-size: 12px;
+    line-height: 15px;
     text-align: center;
   }
 
@@ -109,8 +109,8 @@ const BankerTitle = styled.div`
 
   color: #ffffff;
   @media (max-width: 767px) {
-    font-size: 7px;
-    line-height: 9px;
+    font-size: 11px;
+    line-height: 14px;
     text-align: center;
   }
 
@@ -231,10 +231,7 @@ export const MainContent = ({ doc }) => {
         ข้อมูลของท่านมีความปลอดภัย 100%
       </SupTitle>
       <ImageSSL>
-        <img
-          src={doc?.image_ssl?.fluid.src}
-          alt={doc?.image_ssl?.alt}
-        />
+        <img src={doc?.image_ssl?.fluid.src} alt={doc?.image_ssl?.alt} />
       </ImageSSL>
       <PositionBanker>
         <BankerTitle>
@@ -244,7 +241,7 @@ export const MainContent = ({ doc }) => {
         <ImageBanker>
           {image_bank.map((a) => (
             <SizeImage>
-              <ImageOptimize fluid={a.image_banker?.fluid} />
+              <ImageOptimize fluid={a.image_banker?.fixed} />
             </SizeImage>
           ))}
         </ImageBanker>

@@ -73,6 +73,7 @@ const TextBanner = styled.div`
 
 const Homepage = ({ data }) => {
   const doc = data.prismicHomePage.data;
+
   const [load, setLoad] = useState(true);
   useEffect(() => {
     if (!data) return null;

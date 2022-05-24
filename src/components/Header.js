@@ -172,7 +172,6 @@ export const Header = ({ isHomepage, setNavBar }) => {
       }
     }
   `);
-  console.log("data", data);
   return (
     <SizeHeader className={`site-header ${homepageClass}`}>
       <Page>
