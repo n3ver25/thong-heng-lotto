@@ -55,7 +55,7 @@ export const Seo = ({ description, title }) => {
           f.parentNode.insertBefore(j, f);
         })(window, document, "script", "dataLayer", "GTM-PV9ZZQZ")`}
       </script>
-      <body class="dark" data-react-helmet="class">
+      <body className="dark" data-react-helmet="class">
         {`<noscript>
           <iframe
             src="https://www.googletagmanager.com/ns.html?id=GTM-PV9ZZQZ"

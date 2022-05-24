@@ -6,6 +6,7 @@ import { MainContent } from "../components/MainContent";
 import styled, { keyframes } from "styled-components";
 import { graphql } from "gatsby";
 import { RichText } from "prismic-reactjs";
+import LoadingSpin from "react-loading-spin";
 
 const slideRight = keyframes`
 from {
@@ -71,6 +72,14 @@ const TextBanner = styled.div`
   }
 `;
 
+const LoadPosition = styled.div`
+  && {
+    display: flex !important;
+    justify-content: center !important;
+    padding: 180px 150px;
+  }
+`;
+
 const Homepage = ({ data }) => {
   const doc = data.prismicHomePage.data;
 
@@ -89,13 +98,19 @@ const Homepage = ({ data }) => {
         description="Thong Heng แทงหวยออนไลน์ ✓ หวยรัฐบาล ครบทุกหวย หวยรัฐบาล หวยหุ้น หวยลาว หวยฮานอย และหวยยี่กี ยอดนิยม ฝาก-ถอนเร็ว สะสมแต้ม รับฟรีเครดิต VIP."
       />
       <main className="container">
-        <>
-          <TextBanner>
-            <Text>{RichText.render(doc?.text_banner?.raw)}</Text>
-          </TextBanner>
-          <HomepageBanner doc={doc} />
-          {!load && <MainContent doc={doc} />}
-        </>
+        {load ? (
+          <LoadPosition className="loading">
+            <LoadingSpin />
+          </LoadPosition>
+        ) : (
+          <>
+            <TextBanner>
+              <Text>{RichText.render(doc?.text_banner?.raw)}</Text>
+            </TextBanner>
+            <HomepageBanner doc={doc} />
+            <MainContent doc={doc} />
+          </>
+        )}
       </main>
     </Layout>
   );

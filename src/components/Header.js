@@ -208,7 +208,7 @@ export const Header = ({ isHomepage, setNavBar }) => {
             </li>
           </CustomizeUl>
         </nav>
-        <PositionButton>
+        <PositionButton className="login with thong heng">
           <ResgisterButton>
             <a href="http://www.Thonglotto.com">
               <OptimizeButton> เข้าสู่ระบบ</OptimizeButton>
