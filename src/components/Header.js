@@ -161,7 +161,7 @@ export const Header = ({ isHomepage, setNavBar }) => {
 
   const data = useStaticQuery(graphql`
     query {
-      file(relativePath: { eq: "thonghenglogoResize.png" }) {
+      file(relativePath: { eq: "thonghenglogoResizeWebp.webp" }) {
         childImageSharp {
           # Specify a fluid image and fragment
           # The default maxWidth is 800 pixels
