@@ -81,7 +81,6 @@ const LinePosition = styled.a`
 const Contact = ({ data }) => {
   if (!data) return null;
   const doc = data.prismicContact.data;
-  console.log(doc);
   return (
     <Layout>
       <Seo

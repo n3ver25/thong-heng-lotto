@@ -42,7 +42,6 @@ const PromotionMain = ({ data }) => {
   const docPromotionMain = data.allPrismicPromotionMain.nodes;
   const docPromotionSup = data.allPrismicPromotionSup.nodes;
 
-  console.log(docPromotionMain);
   const responsive = {
     superLargeDesktop: {
       // the naming can be any, depends on you.

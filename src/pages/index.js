@@ -78,7 +78,7 @@ const Homepage = ({ data }) => {
     if (!data) return null;
     setTimeout(() => {
       setLoad(false);
-    }, 300);
+    }, 100);
   });
 
   return (
@@ -88,15 +88,13 @@ const Homepage = ({ data }) => {
         description="Thong Heng แทงหวยออนไลน์ ✓ หวยรัฐบาล ครบทุกหวย หวยรัฐบาล หวยหุ้น หวยลาว หวยฮานอย และหวยยี่กี ยอดนิยม ฝาก-ถอนเร็ว สะสมแต้ม รับฟรีเครดิต VIP."
       />
       <main className="container">
-        {!load && (
-          <>
-            <TextBanner>
-              <Text>{RichText.render(doc?.text_banner?.raw)}</Text>
-            </TextBanner>
-            <HomepageBanner doc={doc} />
-            <MainContent doc={doc} />
-          </>
-        )}
+        <>
+          <TextBanner>
+            <Text>{RichText.render(doc?.text_banner?.raw)}</Text>
+          </TextBanner>
+          <HomepageBanner doc={doc} />
+          {!load && <MainContent doc={doc} />}
+        </>
       </main>
     </Layout>
   );

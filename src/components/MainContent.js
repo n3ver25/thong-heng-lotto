@@ -194,7 +194,6 @@ const TextDetailLotto = styled.div`
 
 export const MainContent = ({ doc }) => {
   const image_bank = doc?.body[1].items;
-  console.log(doc);
 
   return (
     <main className="container">

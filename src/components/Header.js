@@ -1,7 +1,7 @@
 import * as React from "react";
-import { Link } from "gatsby";
+import { graphql, Link, useStaticQuery } from "gatsby";
 import styled from "styled-components";
-import logo from "../images/thonghenglogoResize.png";
+import Img from "gatsby-image";
 
 const ResgisterButton = styled.div`
   display: flex;
@@ -76,11 +76,20 @@ const OptimizeButtonRegister = styled.button`
   }
 `;
 
-const TestStyled = styled.img`
+const LogoPosition = styled.div`
   height: 152px;
   width: 239px;
   cursor: pointer;
-  width: 100%;
+  @media (max-width: 767px) {
+    max-height: 46px;
+    max-width: 73px;
+  }
+`;
+
+const LogoLink = styled(Link)`
+  height: 152px;
+  width: 239px;
+  cursor: pointer;
   @media (max-width: 767px) {
     max-height: 46px;
     max-width: 73px;
@@ -149,14 +158,32 @@ const PositionButton = styled.div`
 
 export const Header = ({ isHomepage, setNavBar }) => {
   const homepageClass = isHomepage ? "homepage-header" : "";
+
+  const data = useStaticQuery(graphql`
+    query {
+      file(relativePath: { eq: "thonghenglogoResize.png" }) {
+        childImageSharp {
+          # Specify a fluid image and fragment
+          # The default maxWidth is 800 pixels
+          fluid {
+            ...GatsbyImageSharpFluid
+          }
+        }
+      }
+    }
+  `);
+  console.log("data", data);
   return (
     <SizeHeader className={`site-header ${homepageClass}`}>
       <Page>
-        <Link to="/">
-          <div className="logo">
-            <TestStyled src={logo} alt="ทองเฮง หาซื้อหวยออนไลน์" />
-          </div>
-        </Link>
+        <LogoLink to="/">
+          <LogoPosition className="logo">
+            <Img
+              fluid={data.file.childImageSharp.fluid}
+              alt="Gatsby Docs are awesome"
+            />
+          </LogoPosition>
+        </LogoLink>
         <nav>
           <CustomizeUl>
             <li>
