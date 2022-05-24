@@ -88,7 +88,10 @@ const TestStyled = styled.img`
 `;
 
 const SizeHeader = styled.header`
-  height: 223px !important;
+
+  @media (min-width: 768px) {
+    height: 223px !important;
+  }
   &.homepage-header.site-header {
     @media (max-width: 767px) {
       height: 67px !important;

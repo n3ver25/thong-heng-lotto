@@ -17,6 +17,7 @@ const ImageSize = styled.div`
 
 export const HomepageBanner = ({ doc }) => {
   const data = doc.body[0].items;
+  console.log(data);
   const slider = (
     <AwesomeSlider>
       <div
