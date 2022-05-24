@@ -300,4 +300,14 @@ footer a {
     width: 100%;
     float: none;
   }
+
+}
+
+.loading {
+  height: 118px;
+  width: 100%;
+  margin: auto;
+  object-fit: contain;
+  display: flex;
+  justify-content: center;
 }

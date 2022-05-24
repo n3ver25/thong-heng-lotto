@@ -88,7 +88,7 @@ const Homepage = ({ data }) => {
     if (!data) return null;
     setTimeout(() => {
       setLoad(false);
-    }, 100);
+    }, 200);
   });
 
   return (
@@ -99,9 +99,9 @@ const Homepage = ({ data }) => {
       />
       <main className="container">
         {load ? (
-          <LoadPosition className="loading">
-            <LoadingSpin />
-          </LoadPosition>
+          <div className="loading">
+            <LoadingSpin primaryColor="#e0b959" secondaryColor="#333" />
+          </div>
         ) : (
           <>
             <TextBanner>

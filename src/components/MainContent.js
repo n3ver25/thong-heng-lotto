@@ -82,12 +82,12 @@ const SupTitle = styled.div`
 
   color: #ffffff;
 `;
-const ImageSSL = styled.div`
-  width: 264px;
+const ImageSSL = styled.img`
   height: 118px;
+  width: 100%;
   margin: auto;
+  object-fit: contain;
   @media (max-width: 767px) {
-    width: 89px;
     height: 39px;
   }
 `;
@@ -230,18 +230,16 @@ export const MainContent = ({ doc }) => {
         เว็บหวยออนไลน์ ทองลอตโต้ (thong heng) มีการเข้ารหัสข้อมูล 256 บิต
         ข้อมูลของท่านมีความปลอดภัย 100%
       </SupTitle>
-      <ImageSSL>
-        <img src={doc?.image_ssl?.fluid.src} alt={doc?.image_ssl?.alt} />
-      </ImageSSL>
+      <ImageSSL src={doc?.image_ssl?.fluid.src} alt={doc?.image_ssl?.alt} />
       <PositionBanker>
         <BankerTitle>
           ฝาก ถอน รวดเร็ว ผ่านระบบอัตโนมัติ ปรับเครดิตภายใน 5 นาที
           รองรับรายการได้จาก 6 ธนาคาร
         </BankerTitle>
         <ImageBanker>
-          {image_bank.map((a) => (
+          {image_bank.map((a,index) => (
             <SizeImage>
-              <ImageOptimize fluid={a.image_banker?.fixed} />
+              <ImageOptimize fluid={a.image_banker?.fixed} key={index} />
             </SizeImage>
           ))}
         </ImageBanker>

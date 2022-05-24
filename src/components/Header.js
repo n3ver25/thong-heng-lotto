@@ -179,7 +179,7 @@ export const Header = ({ isHomepage, setNavBar }) => {
           <LogoPosition className="logo">
             <Img
               fluid={data.file.childImageSharp.fluid}
-              alt="Gatsby Docs are awesome"
+              alt="ขายหวยออนไลน์ Lotto online"
             />
           </LogoPosition>
         </LogoLink>
