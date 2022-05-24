@@ -7,6 +7,7 @@ import styled, { keyframes } from "styled-components";
 import { graphql } from "gatsby";
 import { RichText } from "prismic-reactjs";
 import LoadingSpin from "react-loading-spin";
+import Img from "gatsby-image/withIEPolyfill";
 
 const slideRight = keyframes`
 from {
@@ -80,17 +81,38 @@ const LoadPosition = styled.div`
   }
 `;
 
+const TestImage = styled.div`
+  max-width: 1232px;
+  height: auto;
+  margin: 50px auto;
+  .awssld__content > img,
+  .awssld__content > video {
+    object-fit: contain !important;
+  }
+  @media (max-width: 767px) {
+    margin: 8px auto;
+  }
+`;
+const Test = styled(Img)`
+  padding: 15px;
+  height: 30vh;
+
+  margin: 50px auto;
+  .awssld__content > img,
+  .awssld__content > video {
+    object-fit: contain !important;
+  }
+  @media (max-width: 767px) {
+    margin: 8px auto;
+  }
+`;
+
 const Homepage = ({ data }) => {
   const doc = data.prismicHomePage.data;
 
   const [load, setLoad] = useState(true);
-  useEffect(() => {
-    if (!data) return null;
-    setTimeout(() => {
-      setLoad(false);
-    }, 200);
-  });
 
+  console.log(load);
   return (
     <Layout isHomepage>
       <Seo
@@ -99,9 +121,19 @@ const Homepage = ({ data }) => {
       />
       <main className="container">
         {load ? (
-          <div className="loading">
-            <LoadingSpin primaryColor="#e0b959" secondaryColor="#333" />
-          </div>
+          <>
+            <TestImage className="width-height">
+              <Test
+                fluid={doc.body[0].items[0].banner_image?.fluid}
+                objectFit="contain"
+                objectPosition="50% 50%"
+                onLoad={() => setLoad(false)}
+              />
+            </TestImage>
+            <div className="loading">
+              <LoadingSpin primaryColor="#e0b959" secondaryColor="#333" />
+            </div>
+          </>
         ) : (
           <>
             <TextBanner>
