@@ -2,7 +2,7 @@
 .container,
 header,
 footer {
-  max-width: 980px;
+  max-width: 1440px;
   margin: auto;
 }
 
@@ -18,7 +18,7 @@ footer {
 
 .site-header,
 .site-header a {
-  color: #484d52;
+  color: #ffffff;
   font-weight: 700;
 }
 
@@ -244,7 +244,6 @@ footer a {
   }
 
   .homepage-header.site-header {
-    position: absolute;
     left: 0;
     right: 0;
   }
