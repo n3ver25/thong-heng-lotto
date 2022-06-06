@@ -112,12 +112,11 @@ const Homepage = ({ data }) => {
 
   const [load, setLoad] = useState(true);
 
-  console.log(load);
   return (
     <Layout isHomepage>
       <Seo
         title="ทองเฮงล๊อตโต้"
-        description="Thong Heng แทงหวยออนไลน์ ✓ หวยรัฐบาล ครบทุกหวย หวยรัฐบาล หวยหุ้น หวยลาว หวยฮานอย และหวยยี่กี ยอดนิยม ฝาก-ถอนเร็ว สะสมแต้ม รับฟรีเครดิต VIP."
+        description="Thong Heng ทองเฮง99 แทงหวยออนไลน์ ✓ หวยรัฐบาล ครบทุกหวย หวยรัฐบาล หวยหุ้น หวยลาว หวยฮานอย และหวยยี่กี ยอดนิยม ฝาก-ถอนเร็ว สะสมแต้ม รับฟรีเครดิต VIP."
       />
       <main className="container">
         {load ? (
@@ -136,7 +135,7 @@ const Homepage = ({ data }) => {
           </>
         ) : (
           <>
-            <TextBanner>
+            <TextBanner className="text-runner">
               <Text>{RichText.render(doc?.text_banner?.raw)}</Text>
             </TextBanner>
             <HomepageBanner doc={doc} />

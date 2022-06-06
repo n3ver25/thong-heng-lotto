@@ -5,6 +5,7 @@ import { graphql } from "gatsby";
 import { RichText } from "prismic-reactjs";
 import styled from "styled-components";
 import IconLine from "../images/line.png";
+import LoadingSpin from "react-loading-spin";
 
 const LayoutPage = styled.div`
   text-align: center;
@@ -81,27 +82,43 @@ const LinePosition = styled.a`
 const Contact = ({ data }) => {
   if (!data) return null;
   const doc = data.prismicContact.data;
+
+  const [load, setLoad] = React.useState(true);
+  React.useEffect(() => {
+    window.setTimeout(() => {
+      setLoad(false);
+    }, 1000);
+  }, []);
+
   return (
     <Layout>
       <Seo
-        title="ทองเฮงล๊อตโต้"
-        description="เฮง เฮง เฮง เว็บหวย บริการ หวยออนไลน์ ทุกชนิท หวยรัฐบาล หวยฮานอย หวยลาว หวยยี่กี คุณภาพอันดับ 1 นี้ไม่ได้เปิดให้บริการแค่การแทงหวยไทยเท่านั้น แต่ยังมีหวยต่างประเทศ"
+        title="thongheng99"
+        description="thongheng99 เฮง เฮง เฮง เว็บหวย บริการ หวยออนไลน์ ทุกชนิท หวยรัฐบาล หวยฮานอย หวยลาว หวยยี่กี คุณภาพอันดับ 1 นี้ไม่ได้เปิดให้บริการแค่การแทงหวยไทยเท่านั้น แต่ยังมีหวยต่างประเทศ"
       />
       <main className="container">
-        <LayoutPage>
-          <div>{RichText.render(doc.contact_title.raw)}</div>
-          <div>{RichText.render(doc.contact_detail.raw)}</div>
-          <LinePosition href={"https://line.me/ti/p/liBcliEwKW"}>
-            <OptimizeIcon src={IconLine} alt={"Line:@thongheng99"} />
-            LINE: @thongheng99
-          </LinePosition>
-        </LayoutPage>
-        <a href={"https://line.me/ti/p/liBcliEwKW"}>
-          <ButtonConnect>
-            ติดต่อสอบถาม
-            <ClickPosition>คลิก</ClickPosition>
-          </ButtonConnect>
-        </a>
+        {load ? (
+          <div className="loading">
+            <LoadingSpin primaryColor="#e0b959" secondaryColor="#333" />
+          </div>
+        ) : (
+          <>
+            <LayoutPage>
+              <div>{RichText.render(doc.contact_title.raw)}</div>
+              <div>{RichText.render(doc.contact_detail.raw)}</div>
+              <LinePosition href={"https://line.me/ti/p/liBcliEwKW"}>
+                <OptimizeIcon src={IconLine} alt={"Line:@thongheng99"} />
+                LINE: @thongheng99
+              </LinePosition>
+            </LayoutPage>
+            <a href={"https://line.me/ti/p/liBcliEwKW"}>
+              <ButtonConnect>
+                ติดต่อสอบถาม
+                <ClickPosition>คลิก</ClickPosition>
+              </ButtonConnect>
+            </a>
+          </>
+        )}
       </main>
     </Layout>
   );

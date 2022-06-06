@@ -26,7 +26,7 @@ export const Seo = ({ description, title }) => {
       <meta name="description" content={metaDescription} />
       <meta
         name="google-site-verification"
-        content="rIRZ1gGjPJTmAm8-CQLo4n20I5lVQKP-e8vaT3B6Sgk"
+        content="nYEcAiVi0-wvNqXEt5LI-Y0nRQyQ8DbY_3VpOdeZL0M"
       />
       <meta name="keywords" cpntent={metaTitle} />
       {/* Global site tag (gtag.js) - Google Analytics  */}

@@ -66,7 +66,7 @@ const PromotionMain = ({ data }) => {
     <Layout>
       <Seo
         title="ทองเฮงล๊อตโต้"
-        description="They also sell Lotto tickets, mobile top up cards and national ... Thong Heng sell an assortment of Oriental food and grocery items."
+        description="`เฮง99` They also sell Lotto tickets, mobile top up cards and national ... Thong Heng sell an assortment of Oriental food and grocery items."
       />
 
       <main className="container">

@@ -46,7 +46,7 @@ const Rules = ({ data }) => {
     <Layout>
       <Seo
         title="ทองเฮง"
-        description="Want to learn more? Get the answer to all your questions here."
+        description="หวย ซื้อหวย ขายหวย คิดถึง `เฮง99` `ทองเฮง99`"
       />
 
       <main className="container">
